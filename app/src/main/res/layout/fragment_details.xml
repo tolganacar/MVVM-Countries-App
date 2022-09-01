@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.tolganacar.kotlincountries.model.Country"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +23,7 @@
             android:layout_height="29dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Country Currency"
+            android:text="@{selectedCountry.countryCurrency}"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
@@ -30,7 +36,7 @@
             android:layout_height="29dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Country Language"
+            android:text="@{selectedCountry.countryLanguage}"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -43,7 +49,7 @@
             android:layout_height="29dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Country Region"
+            android:text="@{selectedCountry.countryRegion}"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +61,7 @@
             android:layout_height="29dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Country Capital"
+            android:text="@{selectedCountry.countryCapital}"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +75,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            android:downloadUrl="@{selectedCountry.imageUrl}"/>
 
         <TextView
             android:id="@+id/countryNameDetails"
@@ -77,7 +83,7 @@
             android:layout_height="36dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Country Name"
+            android:text="@{selectedCountry.countryName}"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

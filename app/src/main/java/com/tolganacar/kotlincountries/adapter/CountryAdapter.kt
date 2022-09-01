@@ -1,9 +1,12 @@
 package com.tolganacar.kotlincountries.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.tolganacar.kotlincountries.R
 import com.tolganacar.kotlincountries.databinding.RecyclerRowBinding
 import com.tolganacar.kotlincountries.model.Country
 import com.tolganacar.kotlincountries.util.downloadFromUrl
@@ -11,27 +14,20 @@ import com.tolganacar.kotlincountries.util.placeholderProgressBar
 import com.tolganacar.kotlincountries.view.FeedFragmentDirections
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
-class CountryAdapter(val countryList : ArrayList<Country>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+class CountryAdapter(val countryList : ArrayList<Country>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>(),CountryClickListener {
 
     class CountryViewHolder(val binding : RecyclerRowBinding) : RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
-        val binding = RecyclerRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = DataBindingUtil.inflate<RecyclerRowBinding>(inflater, R.layout.recycler_row,parent,false)
         return CountryViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
-        holder.binding.countryName.text = countryList.get(position).countryName
-        holder.binding.countryRegion.text = countryList.get(position).countryRegion
-
-        holder.itemView.setOnClickListener {
-            val action = FeedFragmentDirections.actionFeedFragmentToDetailsFragment(countryList[position].uuid)
-            Navigation.findNavController(it).navigate(action)
-        }
-
-        holder.binding.imageView.downloadFromUrl(countryList.get(position).imageUrl,
-            placeholderProgressBar(holder.itemView.context))
+        holder.binding.country = countryList.get(position)
+        holder.binding.listener = this
     }
 
     override fun getItemCount(): Int {
@@ -42,5 +38,11 @@ class CountryAdapter(val countryList : ArrayList<Country>) : RecyclerView.Adapte
         countryList.clear()
         countryList.addAll(newCountryList)
         notifyDataSetChanged()
+    }
+
+    override fun onCountryClicked(v: View) {
+        val uuid = v.countryUuidText.text.toString().toInt()
+        val action = FeedFragmentDirections.actionFeedFragmentToDetailsFragment(uuid)
+        Navigation.findNavController(v).navigate(action)
     }
 }
