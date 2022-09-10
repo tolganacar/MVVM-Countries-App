@@ -15,3 +15,4 @@
 - **[Retrofit](https://github.com/square/retrofit)** 
 - **[RxJava](https://developers.google.com/maps/documentation/android-sdk/rx)**
 - **[Glide](https://github.com/bumptech/glide)**
+- **[KTX](https://developer.android.com/kotlin/ktx)**
