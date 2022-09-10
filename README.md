@@ -5,7 +5,6 @@
 - MVVM
 
 ## Technologies
-#### Dependencies
 - **[Fragment](https://developer.android.com/jetpack/androidx/releases/fragment)** 
 - **[Navigation](https://developer.android.com/jetpack/androidx/releases/navigation)** 
 - **[LiveData](https://developer.android.com/topic/libraries/architecture/livedata)** 
