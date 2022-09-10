@@ -14,4 +14,5 @@
 - **[Coroutines](https://github.com/Kotlin/kotlinx.coroutines)** 
 - **[Room](https://developer.android.com/jetpack/androidx/releases/room)** 
 - **[Retrofit](https://github.com/square/retrofit)** 
-- **[GSON](https://github.com/google/gson)** 
+- **[RxJava](https://developers.google.com/maps/documentation/android-sdk/rx)**
+- **[Glide](https://github.com/bumptech/glide)
