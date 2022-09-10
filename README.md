@@ -4,7 +4,7 @@
 ## Architecture
 - MVVM
 
-## Tech Stack
+## Technologies
 #### Dependencies
 - **[Fragment](https://developer.android.com/jetpack/androidx/releases/fragment)** 
 - **[Navigation Component](https://developer.android.com/jetpack/androidx/releases/navigation)** 
