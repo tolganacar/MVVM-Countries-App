@@ -7,7 +7,7 @@
 ## Technologies
 #### Dependencies
 - **[Fragment](https://developer.android.com/jetpack/androidx/releases/fragment)** 
-- **[Navigation Component](https://developer.android.com/jetpack/androidx/releases/navigation)** 
+- **[Navigation](https://developer.android.com/jetpack/androidx/releases/navigation)** 
 - **[LiveData](https://developer.android.com/topic/libraries/architecture/livedata)** 
 - **[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)** 
 - **[Databinding](https://developer.android.com/topic/libraries/data-binding/)** 
